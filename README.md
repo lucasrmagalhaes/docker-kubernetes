@@ -1,7 +1,8 @@
 # Docker & Kubernetes
 
 [Kind (Kubernetes in Docker)](https://kind.sigs.k8s.io/)
-Pod, ReplicaSet, Deployment e Service
+
+Pod, ReplicaSet, Deployment e Service.
 
 [Lens | The Kubernetes IDE](https://k8slens.dev/)
 

@@ -34,7 +34,7 @@ cd /usr/share/nginx/html
 apt update
 ```
 
-````
+```
 apt install vim
 ```
 

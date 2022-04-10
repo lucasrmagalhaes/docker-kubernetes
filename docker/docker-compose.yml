@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  web:
+    image: wesleywillians/nginx-fullcycle
+    ports:
+      - "8080:80"
+
+  app:
+    build: app/
+    volumes:
+      - ./app:/go/src
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "db-name"
+    volumes:
+      - "./mysql:/var/lib/mysql"
+
+  redis:
+    image: redis:alpine
+    environment:
+      REDIS_PASSWORD: "root"
+    volumes:
+      - "./redis:/var/libs/redis"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    environment:
+      RABBITMQ_DEFAULT_USER: "root"
+      RABBITMQ_DEFAULT_PASS: "root"
+    volumes:
+      - "./rabbitmq:/var/libs/rabbitmq"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
